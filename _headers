@@ -1,0 +1,10 @@
+/floors/installation
+  Cache-Control: no-cache, no-store, must-revalidate
+/floors/installation/*
+  Cache-Control: no-cache, no-store, must-revalidate
+/floors/warranty
+  Cache-Control: no-cache, no-store, must-revalidate
+/floors/warranty/*
+  Cache-Control: no-cache, no-store, must-revalidate
+/documents/*
+  Cache-Control: no-cache, must-revalidate
