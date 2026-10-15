@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About Us — Bravion Supply LLC</title>
+<meta name="description" content="Bravion Supply LLC is a Florida-based importer and wholesale supplier of IT hardware and building materials, with consolidation hubs in Delaware, Florida and California.">
+<link rel="canonical" href="https://bravionsupply.com/about/">
+<meta property="og:title" content="About Us — Bravion Supply LLC">
+<meta property="og:description" content="A Florida-based importer and wholesale supplier: IT hardware and building materials, U.S. delivery and export.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&display=swap" rel="stylesheet">
+<style>
+/* ===== DESIGN TOKENS (brand palette + one new accent) ===== */
+:root{
+  --navy:#0b1527;--navy-2:#101d35;--navy-3:#1a2d4f;--navy-4:#24395e;
+  --blue:#2a5ba8;--blue-2:#3b72c8;--blue-3:#7aa7e8;--blue-soft:#eaf0fa;
+  --steel:#8fa8c8;--steel-2:#c9d6e8;
+  --sky:#38b6ff;--sky-2:#6cc9ff;--sky-soft:#e8f6ff;   /* light blue (голубой) */
+  --accent:var(--sky);--accent-2:var(--sky-2);--on-accent:#0b1527;   /* CTA = light blue, dark text */
+  --ink:#0b0d12;--text:#1c2130;--muted:#5b6472;
+  --line:#e2e8f0;--off:#f5f7fa;--white:#fff;
+  --r:14px;--r-lg:22px;
+  --shadow:0 1px 2px rgba(13,26,46,.06),0 8px 24px rgba(13,26,46,.08);
+  --shadow-lg:0 2px 6px rgba(13,26,46,.08),0 24px 48px rgba(13,26,46,.16);
+  --font:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --wrap:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:140px}
+body{font-family:var(--font);color:var(--text);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+svg{display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.ic{width:20px;height:20px;flex:none}
+
+/* ===== BUTTONS ===== */
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15px;padding:14px 22px;border-radius:10px;border:1px solid transparent;transition:transform .15s,background .15s,border-color .15s;white-space:nowrap}
+.btn:hover{transform:translateY(-1px)}
+.btn .ic{width:18px;height:18px}
+.btn-accent{background:var(--accent);color:var(--on-accent)}.btn-accent:hover{background:var(--accent-2)}
+.btn-blue{background:var(--blue);color:#fff}.btn-blue:hover{background:var(--blue-2)}
+.btn-ghost{border-color:rgba(255,255,255,.3);color:#fff;background:rgba(255,255,255,.04)}.btn-ghost:hover{border-color:rgba(255,255,255,.6)}
+.btn-line{border-color:var(--line);color:var(--ink);background:#fff}.btn-line:hover{border-color:var(--blue);color:var(--blue)}
+.link{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:14px;color:var(--blue)}
+.link .ic{width:16px;height:16px;transition:transform .15s}.link:hover .ic{transform:translateX(3px)}
+
+/* ===== TICKER (running blue strip) ===== */
+.ticker{position:relative;overflow:hidden;background:linear-gradient(90deg,#0d2450 0%,#2a5ba8 50%,#0d2450 100%);color:#fff;border-bottom:1px solid rgba(56,182,255,.35)}
+.ticker::before,.ticker::after{content:"";position:absolute;top:0;bottom:0;width:90px;z-index:1;pointer-events:none}
+.ticker::before{left:0;background:linear-gradient(90deg,#0d2450,rgba(13,36,80,0))}
+.ticker::after{right:0;background:linear-gradient(270deg,#0d2450,rgba(13,36,80,0))}
+.ticker-track{display:flex;width:max-content;animation:scroll 42s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-group{display:flex;align-items:center;flex:none}
+.ticker span{font-size:13.5px;font-weight:600;letter-spacing:.02em;padding:11px 0;white-space:nowrap}
+.ticker span b{color:var(--sky);font-weight:700}
+.ticker i{flex:none;width:6px;height:6px;border-radius:50%;background:var(--sky);box-shadow:0 0 10px 1px var(--sky);margin:0 24px}
+
+/* ===== HEADER ===== */
+.hdr{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.hdr-top{display:flex;align-items:center;gap:28px;height:76px}
+.logo{display:flex;align-items:center;flex:none}
+.logo img{display:block;height:44px;width:auto}
+.ftr .logo img{height:46px}
+.logo b{font-weight:900;font-size:22px;letter-spacing:.04em;color:var(--navy)}
+.logo span{font-weight:700;font-size:12px;letter-spacing:.24em;color:var(--blue)}
+.search{flex:1;display:flex;align-items:center;gap:10px;background:var(--off);border:1px solid var(--line);border-radius:999px;padding:0 5px 0 20px;height:50px;max-width:640px;transition:border-color .15s,background .15s}
+.search:focus-within{border-color:var(--blue);background:#fff}
+.search input{flex:1;border:0;background:transparent;font:inherit;font-size:15px;color:var(--ink);outline:none;min-width:0}
+.search input::placeholder{color:#7d8ca1}
+.search button{border:0;background:var(--navy);color:#fff;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;flex:none}
+.hdr-actions{display:flex;align-items:center;gap:18px;margin-left:auto;flex:none}
+.hdr-phone{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--ink);font-size:14.5px}
+.hdr-phone .ic{color:var(--blue)}
+.hdr .btn{padding:11px 18px;font-size:14px}
+.burger{display:none;border:0;background:none;width:44px;height:44px;place-items:center;color:var(--ink)}
+.burger .ic{width:26px;height:26px}
+.nav{border-top:1px solid var(--line);position:relative}
+.nav-in{display:flex;align-items:center;gap:2px;height:52px}
+.nav-in>a,.nav-btn{font-size:14.5px;font-weight:500;color:var(--ink);padding:8px 12px;border-radius:8px;border:0;background:none;display:flex;align-items:center;gap:5px;white-space:nowrap}
+.nav-in>a:hover,.nav-btn:hover,.nav-btn[aria-expanded="true"]{background:var(--off)}
+.nav-btn .ic{width:16px;height:16px;transition:transform .2s}
+.nav-btn[aria-expanded="true"] .ic{transform:rotate(180deg)}
+.nav-in>a.nav-cta{margin-left:auto;color:var(--blue);font-weight:700}
+.nav-cta .ic{width:16px;height:16px}
+.mega{position:absolute;left:0;right:0;top:100%;background:#fff;border-top:1px solid var(--line);box-shadow:var(--shadow-lg);display:none}
+.mega.open{display:block}
+.mega-in{display:grid;grid-template-columns:repeat(4,1fr) 1.25fr;gap:32px;padding-top:28px;padding-bottom:32px}
+.mega h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.mega-col a{display:block;padding:6px 0;color:var(--ink);font-size:15px}
+.mega-col a:hover{color:var(--blue)}
+.mega-promo{background:var(--navy);color:#fff;border-radius:var(--r);padding:24px}
+.mega-promo b{font-size:18px}
+.mega-promo p{color:rgba(255,255,255,.7);font-size:14px;margin:8px 0 18px}
+.mega-promo .btn{padding:11px 16px;font-size:14px}
+
+/* ===== HERO (real product photography + light beams) ===== */
+.hero{position:relative;color:#fff;overflow:hidden;background:var(--navy)}
+.hero-photo{position:absolute;top:0;bottom:0;right:0;width:68%;background:#0b1527 url("img/hero-bg.jpg") 60% 50%/cover no-repeat}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 0%,rgba(11,21,39,.88) 22%,rgba(11,21,39,.3) 58%,rgba(11,21,39,.22) 100%),linear-gradient(0deg,rgba(11,21,39,.96) 0%,transparent 34%)}
+.beams{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.beams i{position:absolute;left:-20%;width:140%;height:2px;background:linear-gradient(90deg,transparent 15%,rgba(140,215,255,.95) 50%,transparent 85%);transform:rotate(-22deg);box-shadow:0 0 22px 3px rgba(56,182,255,.35)}
+.beams i:nth-child(1){top:16%}
+.beams i:nth-child(2){top:48%;opacity:.5;height:1px}
+.beams i:nth-child(3){top:80%;opacity:.75}
+.beams i:nth-child(4){top:28%;height:110px;opacity:.16;filter:blur(34px);background:linear-gradient(90deg,transparent,#38b6ff,transparent);box-shadow:none}
+.hero-in{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding-top:72px;padding-bottom:84px;min-height:620px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;font-size:13.5px;font-weight:600;border:1px solid}
+.pill .ic{width:15px;height:15px}
+.pill-sky{color:#8fd6ff;border-color:rgba(56,182,255,.45);background:rgba(56,182,255,.10)}
+.pill-blue{color:#b3cdf3;border-color:rgba(122,167,232,.45);background:rgba(122,167,232,.10)}
+.pill-white{color:#fff;border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.06)}
+.hero h1{font-size:clamp(40px,5.2vw,68px);line-height:1.02;font-weight:900;letter-spacing:-.022em;margin:22px 0 22px}
+.hero h1 span{color:var(--sky)}
+.hero-lead{font-size:clamp(16px,1.35vw,19px);color:rgba(255,255,255,.76);max-width:590px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.hv{position:relative;height:500px}
+.pc{position:absolute;margin:0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -12px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.1)}
+.pc img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.pc figcaption{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 14px;font-size:13.5px;font-weight:700;color:var(--ink)}
+.pc figcaption span{font-size:11.5px;font-weight:600;color:var(--blue);background:var(--sky-soft);padding:3px 9px;border-radius:999px;white-space:nowrap}
+.pc1{width:62%;left:7%;top:0;transform:rotate(-3deg);z-index:2}
+.pc2{width:45%;right:0;top:33%;transform:rotate(4deg);z-index:3}
+.pc3{width:43%;left:0;bottom:0;transform:rotate(2.5deg);z-index:1}
+.hv-chip{position:absolute;z-index:4;display:flex;align-items:center;gap:10px;background:#fff;color:var(--ink);border-radius:12px;padding:10px 14px;box-shadow:var(--shadow-lg);font-size:13px;font-weight:700;line-height:1.3}
+.hv-chip .ic{width:22px;height:22px;color:var(--blue)}
+.hv-chip small{display:block;font-weight:500;color:var(--muted);font-size:11.5px}
+.hv-chip.c1{left:47%;bottom:2%}
+.hv-chip.c2{right:0;top:3%}
+.stats{position:relative;z-index:1;border-top:1px solid rgba(143,168,200,.2);background:rgba(11,21,39,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.stats-in{display:grid;grid-template-columns:repeat(4,1fr);padding-top:26px;padding-bottom:26px}
+.stat{text-align:center;padding:0 12px;border-left:1px solid rgba(143,168,200,.15)}
+.stat:first-child{border-left:0}
+.stat b{display:block;font-size:clamp(20px,2.1vw,28px);font-weight:900;letter-spacing:-.02em;color:#fff}
+.stat span{font-size:13.5px;color:rgba(255,255,255,.58)}
+
+/* ===== SECTION BASICS ===== */
+.sec{padding:96px 0}
+.sec-off{background:var(--off)}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.h2{font-size:clamp(30px,3.5vw,46px);line-height:1.08;font-weight:900;letter-spacing:-.02em;color:var(--ink);margin:12px 0 14px}
+.lead{font-size:17px;color:var(--muted);max-width:680px}
+.sec-head{margin-bottom:48px}
+.sec-head.center{text-align:center}
+.sec-head.center .lead{margin:0 auto}
+.sec-head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+
+/* ===== CATEGORIES (photo tiles) ===== */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cat{position:relative;display:block;border-radius:var(--r);overflow:hidden;aspect-ratio:4/3.3;background:var(--navy);box-shadow:var(--shadow);isolation:isolate;transition:box-shadow .25s,transform .25s}
+.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease;z-index:-2}
+.cat::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,21,39,0) 30%,rgba(11,21,39,.55) 60%,rgba(11,21,39,.95) 100%)}
+.cat-body{position:absolute;left:0;right:0;bottom:0;padding:18px 20px}
+.cat h3{font-size:19px;font-weight:800;color:#fff;letter-spacing:-.01em;line-height:1.2}
+.cat p{font-size:13px;color:rgba(255,255,255,.78);margin-top:3px}
+.cat .go{font-size:13px;font-weight:700;color:var(--sky);display:flex;align-items:center;gap:5px;max-height:0;opacity:0;overflow:hidden;transition:max-height .25s,opacity .25s,margin .25s}
+.cat .go .ic{width:14px;height:14px}
+.cat:hover,.cat:focus-visible{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.cat:hover img,.cat:focus-visible img{transform:scale(1.06)}
+.cat:hover .go,.cat:focus-visible .go,.cat:target .go{max-height:24px;opacity:1;margin-top:8px}
+.cat:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.cat:target{box-shadow:0 0 0 3px var(--sky),var(--shadow-lg)}
+
+/* ===== ORDER SIZES ===== */
+.sizes{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.size{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px 24px 24px;display:flex;flex-direction:column}
+.size-scale{display:flex;align-items:flex-end;gap:5px;height:46px;margin-bottom:22px}
+.size-scale i{display:block;width:16px;border-radius:3px;background:var(--steel-2)}
+.size-scale i:nth-child(1){height:30%}.size-scale i:nth-child(2){height:55%}.size-scale i:nth-child(3){height:78%}.size-scale i:nth-child(4){height:100%}
+.size-scale i.on{background:var(--blue)}
+.size h3{font-size:19px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
+.size p{font-size:14.5px;color:var(--muted);margin-top:8px}
+.size .best{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);font-size:13.5px;color:var(--text);flex:1}
+.size .best b{color:var(--ink)}
+.size .link{margin-top:16px}
+
+/* ===== BRANDS (SHI-style) ===== */
+.brands{position:relative;background:#15243e;color:#fff;overflow:hidden;padding:100px 0}
+.rings{position:absolute;inset:0;pointer-events:none}
+.rings span{position:absolute;border:1px solid rgba(255,255,255,.16);border-radius:50%;left:50%}
+.rings .r1{width:1300px;height:1300px;top:50%;transform:translate(-50%,-50%)}
+.rings .r2{width:820px;height:820px;top:-48%;transform:translateX(-50%)}
+.brands .h2{color:#fff}
+.brands .lead{color:rgba(255,255,255,.75)}
+.bstrips{display:grid;gap:14px;margin-top:6px}
+.bstrip{position:relative;overflow:hidden;background:linear-gradient(90deg,#0d2450 0%,#2a5ba8 50%,#0d2450 100%);border-top:1px solid rgba(56,182,255,.45);border-bottom:1px solid rgba(56,182,255,.45);box-shadow:0 0 50px rgba(56,182,255,.12);-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.bstrip.alt{background:#0b1527}
+.bstrip-track{display:flex;width:max-content;animation:scroll 55s linear infinite}
+.bstrip.alt .bstrip-track{animation-direction:reverse;animation-duration:64s}
+.bstrip:hover .bstrip-track{animation-play-state:paused}
+.bstrip-group{display:flex;align-items:center;flex:none}
+.bstrip span{font-size:clamp(22px,2.6vw,36px);font-weight:800;letter-spacing:-.01em;color:#fff;padding:22px 0;white-space:nowrap}
+.bstrip.alt span{color:var(--sky)}
+.bstrip i{flex:none;width:9px;height:9px;border-radius:50%;background:var(--sky);box-shadow:0 0 12px 2px var(--sky);margin:0 34px}
+.bstrip.alt i{background:#fff;box-shadow:0 0 12px 2px rgba(255,255,255,.55)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.brands-foot{text-align:center;margin-top:44px}
+.tm{font-size:12px;color:rgba(255,255,255,.45);margin-top:18px}
+
+/* ===== LOGISTICS ===== */
+.route{position:relative;display:grid;grid-template-columns:repeat(5,1fr);margin-bottom:56px}
+.route::before{content:"";position:absolute;top:30px;left:10%;right:10%;border-top:2px dashed var(--steel)}
+.route-step{text-align:center;position:relative;padding:0 8px}
+.route-dot{width:60px;height:60px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;background:var(--blue-soft);color:var(--blue);position:relative;z-index:1;border:5px solid #fff;box-shadow:0 0 0 1px var(--line)}
+.route-step:last-child .route-dot{background:var(--sky);color:var(--navy)}
+.route-dot .ic{width:24px;height:24px}
+.route-step b{display:block;font-size:15px;color:var(--ink)}
+.route-step span{font-size:13px;color:var(--muted)}
+.logi{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.logi-card{border:1px solid var(--line);border-radius:var(--r);padding:28px;background:#fff;transition:border-color .2s,box-shadow .2s}
+.logi-card:hover{border-color:rgba(42,91,168,.35);box-shadow:var(--shadow)}
+.logi-ic{width:50px;height:50px;border-radius:12px;background:var(--navy);color:var(--blue-3);display:grid;place-items:center;margin-bottom:18px}
+.logi-ic .ic{width:24px;height:24px}
+.logi-card h3{font-size:18px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
+.logi-card p{font-size:14.5px;color:var(--muted);margin-top:8px}
+
+/* ===== TURNKEY (SHI select/deploy) ===== */
+.tk{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+.checks{list-style:none;margin-top:24px;display:grid;gap:12px}
+.checks li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:var(--text)}
+.checks .ic{color:var(--blue);margin-top:2px}
+.note{display:flex;gap:12px;align-items:center;background:var(--blue-soft);border-radius:12px;padding:14px 16px;font-size:14.5px;color:var(--ink);margin-top:26px;font-weight:500}
+.note .ic{color:var(--blue)}
+.tk .btn{margin-top:28px}
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:16px;counter-reset:s}
+.step{background:#fff;border-radius:var(--r);padding:26px;border:1px solid var(--line);position:relative;overflow:hidden}
+.step::after{content:"";position:absolute;right:-34px;top:-34px;width:104px;height:104px;border-radius:50%;background:var(--blue-soft)}
+.step-ic{position:relative;z-index:1;width:46px;height:46px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;margin-bottom:16px}
+.step-n{font-size:12.5px;font-weight:800;color:var(--blue);letter-spacing:.12em}
+.step h3{font-size:21px;font-weight:800;color:var(--ink);margin:4px 0 6px;letter-spacing:-.01em}
+.step p{font-size:14.5px;color:var(--muted);position:relative;z-index:1}
+
+/* ===== WHO WE SUPPLY (CDW industries) ===== */
+.ind{display:grid;grid-template-columns:350px 1fr;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg);background:#fff}
+.ind-side{background:var(--navy);color:#fff;padding:44px 36px}
+.ind-badge{width:84px;height:84px;border:2px solid rgba(255,255,255,.85);border-radius:50%;display:grid;place-items:center;margin-bottom:26px}
+.ind-badge .ic{width:38px;height:38px}
+.ind-side h3{font-size:30px;font-weight:800;line-height:1.15;letter-spacing:-.02em;margin-bottom:26px}
+.ind-tabs{display:flex;flex-direction:column;gap:2px}
+.ind-tab{background:none;border:0;color:rgba(255,255,255,.72);text-align:left;font-size:17px;padding:11px 0 11px 18px;border-left:4px solid transparent;transition:color .15s}
+.ind-tab:hover{color:#fff}
+.ind-tab[aria-selected="true"]{color:#fff;font-weight:700;border-left-color:var(--accent)}
+.ind-main{padding:48px 48px 44px}
+.ind-panel[hidden]{display:none}
+.ind-kicker{display:flex;align-items:center;gap:10px;color:var(--blue);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.ind-kicker .ic{width:22px;height:22px}
+.ind-panel h4{font-size:30px;font-weight:900;letter-spacing:-.015em;color:var(--ink);margin:10px 0 10px;line-height:1.15}
+.ind-panel>p{font-size:16.5px;color:var(--muted);max-width:640px}
+.ind-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0 28px}
+.ind-card{border:1px solid var(--line);border-radius:12px;padding:20px;background:var(--off)}
+.ind-card small{display:block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.ind-card b{font-size:15.5px;color:var(--ink);font-weight:600;line-height:1.45;display:block}
+
+/* ===== ABOUT (Buhotec about) ===== */
+.ab-top{background:linear-gradient(180deg,#14294a 0%,#10213d 100%);color:#fff;text-align:center;padding:92px 0 76px}
+.ab-top .eyebrow{color:var(--blue-3)}
+.ab-top .h2{color:#fff;font-size:clamp(36px,4.6vw,62px)}
+.ab-top .lead{color:rgba(255,255,255,.76);margin:0 auto}
+.pills{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
+.story{background:var(--navy);color:#fff;padding:92px 0}
+.story-in{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.story .eyebrow{color:var(--blue-3)}
+.story .h2{color:#fff}
+.story p{color:rgba(255,255,255,.74);margin-top:16px;font-size:16.5px}
+.story p strong{color:#fff}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fact{background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.02));border:1px solid rgba(143,168,200,.2);border-radius:16px;padding:32px 20px;text-align:center}
+.fact b{display:block;font-size:44px;font-weight:900;letter-spacing:-.02em;line-height:1}
+.fact strong{display:block;margin-top:12px;font-size:16px;color:#fff}
+.fact span{font-size:13px;color:rgba(255,255,255,.55)}
+.t-sky{color:var(--sky)}.t-white{color:#fff}.t-blue{color:var(--blue-3)}
+
+/* ===== CREDIBILITY + REVIEWS (Buhotec credibility) ===== */
+.cred-in{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.cred-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
+.cc{border-radius:16px;padding:26px 26px;min-height:156px;color:#fff;position:relative;overflow:hidden}
+.cc b{display:block;font-size:38px;font-weight:900;letter-spacing:-.02em;line-height:1}
+.cc strong{display:block;margin-top:12px;font-size:16.5px}
+.cc span{font-size:13.5px}
+.cc-1{background:radial-gradient(120% 120% at 0% 0%,#1f56b0 0%,#0b1527 72%)}.cc-1 b,.cc-1 strong{color:var(--sky)}.cc-1 span{color:#9cc3ec}
+.cc-2{background:radial-gradient(120% 120% at 100% 0%,#0f3f78 0%,#071222 72%)}.cc-2 b,.cc-2 strong{color:#fff}.cc-2 span{color:#9db4d3}
+.cc-3{background:radial-gradient(120% 120% at 0% 100%,#2a5ba8 0%,#10244a 72%)}.cc-3 b,.cc-3 strong{color:#fff}.cc-3 span{color:#b9cff0}
+.cc-4{background:radial-gradient(120% 120% at 100% 100%,#0e5f96 0%,#0b1527 72%)}.cc-4 b,.cc-4 strong{color:var(--sky)}.cc-4 span{color:#9cc3ec}
+.rev{border:1px solid var(--line);border-radius:18px;padding:24px;background:#fff;box-shadow:var(--shadow)}
+.rev-head{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);font-size:17px;margin-bottom:6px}
+.rev-head .ic{color:var(--blue);width:24px;height:24px}
+.rev-sub{font-size:14px;color:var(--muted);margin-bottom:18px}
+.rev-list{display:grid;gap:14px;max-height:540px;overflow:auto;padding-right:4px}
+.review{border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.review-top{display:flex;align-items:center;gap:12px}
+.avatar{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;flex:none}
+.review-top b{display:block;color:var(--ink)}
+.review-top small{color:var(--muted)}
+.stars{margin-left:auto;color:#f5b301;letter-spacing:2px;white-space:nowrap}
+.review p{margin-top:10px;color:var(--ink)}
+.verify{display:grid;gap:10px}
+.vrow{display:flex;gap:14px;align-items:center;padding:15px 16px;border:1px solid var(--line);border-radius:12px}
+.vrow .ic{color:var(--blue);width:22px;height:22px}
+.vrow b{display:block;color:var(--ink);font-size:15px}
+.vrow span{font-size:13.5px;color:var(--muted)}
+.vrow a{color:var(--blue);font-weight:600}
+
+/* ===== FAQ ===== */
+.faq{max-width:900px;margin:0 auto}
+.faq details{background:#fff;border-radius:14px;border:1px solid var(--line);margin-bottom:14px;box-shadow:0 1px 3px rgba(13,26,46,.05)}
+.faq summary{list-style:none;cursor:pointer;padding:24px 28px;font-weight:700;font-size:18px;color:var(--ink);display:flex;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"";flex:none;border-left:10px solid var(--ink);border-top:6px solid transparent;border-bottom:6px solid transparent;transition:transform .2s}
+.faq details[open] summary::before{transform:rotate(90deg)}
+.faq .ans{padding:0 28px 24px 54px;color:var(--muted);font-size:15.5px}
+.faq-more{text-align:center;margin-top:26px;color:var(--muted)}
+.faq-more a{color:var(--blue);text-decoration:underline;font-weight:600}
+
+/* ===== CTA BAND (SHI) ===== */
+.cta-band{padding:24px 0 96px}
+.cta-box{position:relative;border-radius:36px;overflow:hidden;background:linear-gradient(115deg,#4f86d9 0%,#2a5ba8 32%,#38b6ff 68%,#8ad8ff 100%);min-height:340px;display:grid;place-items:center;text-align:center}
+.cta-box::before{content:"";position:absolute;left:50%;top:50%;width:60%;height:190%;transform:translate(-50%,-50%);background:#16263f;border-radius:50%}
+.cta-inner{position:relative;z-index:1;padding:56px 24px;max-width:640px}
+.cta-inner h2{font-size:clamp(30px,3.8vw,50px);line-height:1.08;font-weight:900;letter-spacing:-.02em;color:#fff}
+.cta-inner p{color:rgba(255,255,255,.72);margin:14px auto 26px;max-width:520px}
+
+/* ===== RFQ FORM ===== */
+.rfq-in{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}
+.contacts{display:grid;gap:12px;margin-top:30px}
+.ct{display:flex;gap:14px;align-items:center;padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:#fff;transition:border-color .15s}
+a.ct:hover{border-color:var(--blue)}
+.ct-ic{width:42px;height:42px;border-radius:10px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;flex:none}
+.ct b{display:block;color:var(--ink);font-size:15px}
+.ct span{font-size:13.5px;color:var(--muted)}
+.form{background:#fff;border:1px solid var(--line);border-radius:18px;padding:32px;box-shadow:var(--shadow)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:var(--off);font:inherit;font-size:15px;color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid rgba(42,91,168,.18);border-color:var(--blue);background:#fff}
+.field textarea{min-height:130px;resize:vertical}
+.form .btn{width:100%;justify-content:center;margin-top:4px}
+.form-note{font-size:12.5px;color:var(--muted);margin-top:12px;text-align:center}
+.hp{display:none}
+
+/* ===== FOOTER ===== */
+.ftr{background:#070e1c;color:rgba(255,255,255,.6);padding:76px 0 28px}
+.ftr-grid{display:grid;grid-template-columns:1.5fr repeat(4,1fr);gap:32px}
+.ftr .logo b{color:#fff}.ftr .logo span{color:var(--blue-3)}
+.ftr-brand p{margin-top:14px;font-size:14px;max-width:300px}
+.ftr h4{color:#fff;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+.ftr-col a,.ftr-col div{display:block;padding:5px 0;font-size:14.5px}
+.ftr-col a:hover{color:#fff}
+.ftr-bottom{margin-top:52px;padding-top:22px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px}
+.ftr-bottom p{max-width:640px}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:1180px){
+  .nav-in>a.nav-cta{display:none}
+  .hdr-phone span{display:none}
+  .cats{grid-template-columns:repeat(3,1fr)}
+  .hero-in{gap:48px}
+}
+@media (max-width:1024px){
+  .hero-in{grid-template-columns:1fr;padding-top:56px;padding-bottom:84px}
+  .hero-in{min-height:0}
+  .hero-photo{width:100%;opacity:.6}
+  .hv{height:450px;max-width:580px;margin:0 auto;width:100%}
+  .sizes{grid-template-columns:repeat(2,1fr)}
+  .ind{grid-template-columns:1fr}
+  .ind-tabs{flex-direction:row;flex-wrap:wrap;gap:6px}
+  .ind-tab{border-left:0;border-bottom:3px solid transparent;padding:8px 12px;font-size:15px}
+  .ind-tab[aria-selected="true"]{border-bottom-color:var(--accent)}
+  .ind-badge{display:none}
+  .ind-side h3{font-size:24px;margin-bottom:16px}
+  .tk,.story-in,.cred-in,.rfq-in{grid-template-columns:1fr;gap:44px}
+  .ftr-grid{grid-template-columns:1fr 1fr 1fr}
+  .ftr-brand{grid-column:1/-1}
+  .mega-in{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:860px){
+  html{scroll-padding-top:150px}
+  .hdr-top{flex-wrap:wrap;height:auto;padding-top:12px;padding-bottom:12px;gap:12px 16px}
+  .search{order:3;flex-basis:100%;max-width:none;height:46px}
+  .burger{display:grid}
+  .hdr .btn-accent{display:none}
+  .nav{display:none;border-top:1px solid var(--line)}
+  .hdr.open .nav{display:block}
+  .nav-in{flex-direction:column;align-items:stretch;height:auto;padding-top:8px;padding-bottom:14px}
+  .nav-in>a,.nav-btn{padding:12px 8px;font-size:16px}
+  .nav-in>a.nav-cta{display:flex;margin-left:0}
+  .nav-btn .ic{display:none}
+  .mega{display:none!important}
+  .route{grid-template-columns:1fr;gap:14px;max-width:420px;margin-left:auto;margin-right:auto}
+  .route::before{top:20px;bottom:20px;left:30px;right:auto;border-top:0;border-left:2px dashed var(--steel)}
+  .route-step{display:flex;align-items:center;gap:16px;text-align:left;padding:0}
+  .route-dot{margin:0}
+  .logi{grid-template-columns:1fr 1fr}
+  .stats-in{grid-template-columns:1fr 1fr;row-gap:22px}
+  .stat:nth-child(3){border-left:0}
+  .ind-cards{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .wrap{padding-left:16px;padding-right:16px}
+  .ticker span{font-size:12.5px;padding:9px 0}
+  .ticker i{margin:0 16px}
+  .sec{padding:68px 0}
+  .brands{padding:72px 0}
+  .hdr-phone{display:none}
+  .cats{grid-template-columns:1fr 1fr;gap:12px}
+  .cat{aspect-ratio:1/1}
+  .cat-body{padding:12px}
+  .cat h3{font-size:15px}
+  .cat p,.cat .go{display:none}
+  .sizes,.logi,.steps{grid-template-columns:1fr}
+  .hv{height:330px}
+  .pc figcaption{padding:7px 10px;font-size:12px}
+  .pc figcaption span{display:none}
+  .hv-chip.c2{display:none}
+  .hv-chip.c1{left:auto;right:0;bottom:4px}
+  .hero-in{padding-bottom:64px}
+  .bstrip span{font-size:21px;padding:15px 0}
+  .bstrip i{margin:0 20px}
+  .ind-side{padding:32px 22px}
+  .ind-main{padding:30px 22px}
+  .ind-panel h4{font-size:24px}
+  .ab-top,.story{padding:68px 0}
+  .fact{padding:24px 12px}.fact b{font-size:34px}
+  .cred-cards{gap:12px}.cc{padding:20px;min-height:140px}.cc b{font-size:30px}
+  .faq summary{font-size:16px;padding:20px}
+  .faq .ans{padding:0 20px 20px 46px}
+  .cta-box{border-radius:24px;min-height:300px}
+  .cta-box::before{width:96%}
+  .form{padding:22px}
+  .frow{grid-template-columns:1fr;gap:0}
+  .ftr-grid{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .ticker-track,.bstrip-track{animation:none}
+}
+
+/* ===== ABOUT PAGE ===== */
+.div-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.div-card{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:360px;color:#fff;display:flex;align-items:flex-end;isolation:isolate;box-shadow:var(--shadow-lg)}
+.div-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .6s ease}
+.div-card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,21,39,.15) 10%,rgba(11,21,39,.94) 100%)}
+.div-card:hover img{transform:scale(1.05)}
+.div-card.plain{background:radial-gradient(120% 120% at 100% 0%,#2a5ba8 0%,#0b1527 70%)}
+.div-card.plain::after{background:none}
+.div-mark{position:absolute;right:28px;top:28px;width:120px;height:120px;color:rgba(255,255,255,.12)}
+.div-body{padding:32px}
+.div-body small{font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sky)}
+.div-body h3{font-size:clamp(26px,2.6vw,34px);font-weight:900;letter-spacing:-.015em;margin:6px 0 8px;line-height:1.1}
+.div-body p{color:rgba(255,255,255,.8);max-width:470px}
+.div-body .link{color:var(--sky);margin-top:16px}
+.vals{grid-template-columns:repeat(4,1fr)}
+.ops-sec{background:var(--navy);color:#fff}
+.ops-sec .h2{color:#fff}.ops-sec .lead{color:rgba(255,255,255,.72)}.ops-sec .eyebrow{color:var(--sky)}
+.ops{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.op{border:1px solid rgba(143,168,200,.22);border-radius:var(--r);padding:30px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015))}
+.op-ic{width:54px;height:54px;border-radius:50%;background:rgba(56,182,255,.14);color:var(--sky);display:grid;place-items:center;margin-bottom:18px}
+.op-ic .ic{width:26px;height:26px}
+.op small{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.op h3{font-size:22px;font-weight:800;letter-spacing:-.015em;margin:6px 0 8px}
+.op p{color:rgba(255,255,255,.7);font-size:15px}
+.cd{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.cd-table{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.cd-row{display:grid;grid-template-columns:200px 1fr;gap:16px;padding:16px 24px;border-bottom:1px solid var(--line);font-size:15px}
+.cd-row:last-child{border-bottom:0}
+.cd-row span{color:var(--muted)}
+.cd-row b{color:var(--ink);font-weight:600}
+.cd-row a{color:var(--blue);font-weight:600}
+@media (max-width:1024px){.div-grid,.cd{grid-template-columns:1fr}.vals{grid-template-columns:1fr 1fr}.ops{grid-template-columns:1fr}}
+@media (max-width:600px){.vals{grid-template-columns:1fr}.cd-row{grid-template-columns:1fr;gap:2px}.div-card{min-height:320px}.div-body{padding:24px}}
+
+/* ===== TYPOGRAPHY (Revolut-style: geometric grotesque headings at medium weight + Inter body)
+   Revolut uses Aeonik Pro (commercial). Satoshi is a free, close alternative (Fontshare, free for commercial use).
+   To switch to licensed Aeonik Pro later, change --font-display only. ===== */
+:root{--font-display:'Satoshi','Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif}
+body{letter-spacing:.01em}
+.hero h1,.h2,.cta-inner h2,.ind-panel h4,.div-body h3{font-family:var(--font-display);font-weight:700}
+.hero h1{letter-spacing:-.03em;line-height:1.02}
+.h2,.cta-inner h2{letter-spacing:-.02em;line-height:1.06}
+.ind-panel h4,.div-body h3{letter-spacing:-.015em}
+.cat h3,.size h3,.logi-card h3,.step h3,.ind-side h3,.op h3,.stat b,.fact b,.cc b,.cc strong,.fact strong,.bstrip span,.logo b,.hv-head,.pc figcaption,.tk-badge b{font-family:var(--font-display);font-weight:700;letter-spacing:-.01em}
+.ind-side h3{font-weight:700}
+.btn,.nav-in>a,.nav-btn{letter-spacing:0}
+</style>
+</head>
+<body>
+<!-- ===== SVG SPRITE: product illustrations (160x110) + line icons (24x24) ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<!-- line icons -->
+<symbol id="ic-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></g></symbol>
+<symbol id="ic-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></g></symbol>
+<symbol id="ic-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g></symbol>
+<symbol id="ic-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></g></symbol>
+<symbol id="ic-truck" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></g></symbol>
+<symbol id="ic-box" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></g></symbol>
+<symbol id="ic-hub" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-5 9 5v12"/><path d="M7 21v-7h10v7M7 17.5h10"/></g></symbol>
+<symbol id="ic-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M8 13h8M8 17h6"/></g></symbol>
+<symbol id="ic-route" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h7a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7"/></g></symbol>
+<symbol id="ic-return" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v5h5"/></g></symbol>
+<symbol id="ic-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></g></symbol>
+<symbol id="ic-arrow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></g></symbol>
+<symbol id="ic-chev" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></g></symbol>
+<symbol id="ic-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></g></symbol>
+<symbol id="ic-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></g></symbol>
+<symbol id="ic-building" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v16M15 9h4a1 1 0 0 1 1 1v11M3 21h18M8 8h3M8 12h3M8 16h3"/></g></symbol>
+<symbol id="ic-menu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></g></symbol>
+<symbol id="ic-target" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></g></symbol>
+<symbol id="ic-tool" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4a5 5 0 0 0-4.6 6.9L3 18.3 5.7 21l7.4-7.4A5 5 0 0 0 20 9l-3 1-2-2 1-3z"/></g></symbol>
+<symbol id="ic-install" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M9 10l2 2 4-4"/></g></symbol>
+<symbol id="ic-chip" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="1.5"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></g></symbol>
+<symbol id="ic-store" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v10h16V10M3 10l2-6h14l2 6zM9 20v-6h6v6"/></g></symbol>
+<symbol id="ic-grad" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></g></symbol>
+<symbol id="ic-cart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20M9 10h6"/></g></symbol>
+<symbol id="ic-star" viewBox="0 0 24 24"><path fill="currentColor" d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></symbol>
+<symbol id="ic-info" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></g></symbol>
+</svg>
+<!-- ===== TICKER ===== -->
+<div class="ticker" role="region" aria-label="Key facts">
+  <div class="ticker-track">
+    <div class="ticker-group"><span><b>B2B</b> wholesale only</span><i></i><span>New, factory-sealed product</span><i></i><span>Delivery across the <b>U.S.</b> &amp; export</span><i></i><span>Consolidation hubs in <b>Delaware</b> · <b>Florida</b> · <b>California</b></span><i></i><span>From one box to full pallets</span><i></i><span><b>16</b> hardware categories</span><i></i><span>Turnkey office setup on request</span><i></i></div>
+    <div class="ticker-group" aria-hidden="true"><span><b>B2B</b> wholesale only</span><i></i><span>New, factory-sealed product</span><i></i><span>Delivery across the <b>U.S.</b> &amp; export</span><i></i><span>Consolidation hubs in <b>Delaware</b> · <b>Florida</b> · <b>California</b></span><i></i><span>From one box to full pallets</span><i></i><span><b>16</b> hardware categories</span><i></i><span>Turnkey office setup on request</span><i></i></div>
+  </div>
+</div>
+
+<!-- ===== HEADER (CDW-style: logo · search · actions / nav row) ===== -->
+<header class="hdr" id="top">
+  <div class="wrap hdr-top">
+    <a class="logo" href="../" aria-label="Bravion Supply home"><img src="../assets/bravion-logo.svg" alt="Bravion Supply" width="166" height="44"></a>
+    <form class="search" id="searchForm" role="search" action="../it-hardware/" method="get">
+      <input id="q" name="q" type="search" aria-label="Search by part number, brand or category" placeholder="Search by part number, brand or category" autocomplete="off">
+      <button type="submit" aria-label="Request this part"><svg class="ic"><use href="#ic-search"/></svg></button>
+    </form>
+    <div class="hdr-actions">
+      <a class="hdr-phone" href="tel:+17542979794"><svg class="ic"><use href="#ic-phone"/></svg><span>+1 (754) 297-9794</span></a>
+      <a class="btn btn-accent" href="../it-hardware/#rfq">Request a Quote</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg class="ic"><use href="#ic-menu"/></svg></button>
+    </div>
+  </div>
+  <nav class="nav" id="nav" aria-label="Main">
+    <div class="wrap nav-in">
+      <button class="nav-btn" id="megaBtn" aria-expanded="false" aria-controls="mega">Hardware<svg class="ic"><use href="#ic-chev"/></svg></button>
+      <a href="../it-hardware/#brands">Brands</a>
+      <a href="../about/" aria-current="page" style="color:var(--blue);font-weight:700">About Us</a>
+      <a href="../it-hardware/#logistics">Logistics &amp; Export</a>
+      <a href="../it-hardware/#turnkey">Turnkey Setup</a>
+      <a href="../it-hardware/#supply">Who We Supply</a>
+      <a class="nav-cta" href="../it-hardware/#rfq">Talk to a Purchasing Manager<svg class="ic"><use href="#ic-arrow"/></svg></a>
+    </div>
+    <div class="mega" id="mega">
+      <div class="wrap mega-in">
+        <div class="mega-col"><h4>Components</h4><a href="../it-hardware/#cat-gpu">Graphics Cards</a><a href="../it-hardware/#cat-cpu">Processors</a><a href="../it-hardware/#cat-mobo">Motherboards</a><a href="../it-hardware/#cat-ram">Memory</a></div>
+        <div class="mega-col"><h4>Storage &amp; Power</h4><a href="../it-hardware/#cat-ssd">SSDs</a><a href="../it-hardware/#cat-hdd">Hard Drives</a><a href="../it-hardware/#cat-psu">Power Supplies</a><a href="../it-hardware/#cat-cool">Cooling</a></div>
+        <div class="mega-col"><h4>Systems</h4><a href="../it-hardware/#cat-laptop">Laptops</a><a href="../it-hardware/#cat-desk">Desktops &amp; Mini PCs</a><a href="../it-hardware/#cat-server">Servers &amp; Workstations</a><a href="../it-hardware/#cat-case">Cases</a></div>
+        <div class="mega-col"><h4>Peripherals &amp; Network</h4><a href="../it-hardware/#cat-monitor">Monitors</a><a href="../it-hardware/#cat-periph">Keyboards &amp; Mice</a><a href="../it-hardware/#cat-net">Networking</a><a href="../it-hardware/#cat-cable">Cables &amp; Accessories</a></div>
+        <div class="mega-promo"><b>Don't see a part?</b><p>We source well beyond this list. Send us the part number and quantity.</p><a class="btn btn-accent" href="../it-hardware/#rfq">Request a Part</a></div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+<!-- ===== PAGE HERO (moved from the IT page) ===== -->
+<section id="about">
+  <div class="ab-top"><div class="wrap">
+    <div class="eyebrow">Who We Are</div>
+    <h1 class="h2">About Bravion Supply</h1>
+    <p class="lead">A Florida-based importer and wholesale supplier. Our IT Hardware division connects trade buyers with the full range of U.S. computer hardware — through one accountable partner.</p>
+    <div class="pills">
+      <span class="pill pill-sky"><svg class="ic"><use href="#ic-star"/></svg>Florida LLC</span>
+      <span class="pill pill-blue"><svg class="ic"><use href="#ic-globe"/></svg>Wholesale &amp; Export</span>
+      <span class="pill pill-white"><svg class="ic"><use href="#ic-check"/></svg>25+ years combined team experience</span>
+    </div>
+  </div></div>
+  <div class="story"><div class="wrap story-in">
+    <div>
+      <div class="eyebrow">Our Story</div>
+      <h2 class="h2">From Florida<br>to the World</h2>
+      <p>Bravion Supply LLC is a Florida-based importer and wholesale supplier working across several product lines, from building materials to IT hardware.</p>
+      <p>Our IT Hardware division is built on a simple idea: trade buyers should be able to source the <strong>full range of computer hardware from the U.S. through one accountable partner</strong> — with a manager who knows their order, consolidated shipping and documentation that holds up at every border.</p>
+      <p>We buy new, factory-sealed product through authorized U.S. channels and deliver it where our customers need it: across the United States and to export markets.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><b class="t-sky">FL</b><strong>Headquarters</strong><span>Sunny Isles Beach, Florida</span></div>
+      <div class="fact"><b class="t-white">3</b><strong>Consolidation Hubs</strong><span>Delaware · Florida · California</span></div>
+      <div class="fact"><b class="t-blue">2</b><strong>Product Divisions</strong><span>IT Hardware · Building Materials</span></div>
+      <div class="fact"><b class="t-sky">B2B</b><strong>Trade Only</strong><span>No consumer retail</span></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ===== DIVISIONS ===== -->
+<section class="sec" id="divisions">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">What We Do</div>
+      <h2 class="h2">Two Divisions, One Standard</h2>
+      <p class="lead">Different product lines, the same way of working: direct sourcing, clear documentation and a manager accountable for every order.</p>
+    </div>
+    <div class="div-grid">
+      <a class="div-card" href="../it-hardware/">
+        <img src="../it-hardware/img/hero-bg.jpg" alt="Custom PC with blue lighting" loading="lazy">
+        <div class="div-body"><small>Division 01</small><h3>IT Hardware</h3><p>Components, systems, peripherals and networking at wholesale — from one box to full pallets, delivered across the U.S. and abroad.</p><span class="link">Explore IT Hardware<svg class="ic"><use href="#ic-arrow"/></svg></span></div>
+      </a>
+      <a class="div-card plain" href="../#floors">
+        <svg class="div-mark" aria-hidden="true"><use href="#ic-building"/></svg>
+        <div class="div-body"><small>Division 02</small><h3>Building Materials</h3><p>Direct import and wholesale supply for contractors, building-supply companies and retailers — including our own BRAVION FLOORS SPC flooring line.</p><span class="link">View Building Materials<svg class="ic"><use href="#ic-arrow"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW WE WORK ===== -->
+<section class="sec sec-off" id="principles">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">How We Work</div>
+      <h2 class="h2">What Our Clients Can Count On</h2>
+    </div>
+    <div class="logi vals">
+      <div class="logi-card"><div class="logi-ic"><svg class="ic"><use href="#ic-shield"/></svg></div><h3>Authorized Sourcing</h3><p>New, factory-sealed product from authorized U.S. distribution and retail channels. No gray market.</p></div>
+      <div class="logi-card"><div class="logi-ic"><svg class="ic"><use href="#ic-target"/></svg></div><h3>One Accountable Manager</h3><p>Every client works with a purchasing manager who knows their orders, specifications and delivery terms.</p></div>
+      <div class="logi-card"><div class="logi-ic"><svg class="ic"><use href="#ic-doc"/></svg></div><h3>Everything in Writing</h3><p>Written quotes, commercial invoices and packing lists on every order — documentation that holds up at customs.</p></div>
+      <div class="logi-card"><div class="logi-ic"><svg class="ic"><use href="#ic-box"/></svg></div><h3>Any Order Size</h3><p>From a single box to full pallets and phased project deliveries, with the same level of service.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHERE WE OPERATE ===== -->
+<section class="sec ops-sec" id="operations">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">Where We Operate</div>
+      <h2 class="h2">U.S. Operations, Global Reach</h2>
+      <p class="lead">Headquartered in Florida, with consolidation hubs on both coasts and delivery across the United States and to export markets.</p>
+    </div>
+    <div class="ops">
+      <div class="op"><div class="op-ic"><svg class="ic"><use href="#ic-building"/></svg></div><small>Headquarters</small><h3>Sunny Isles Beach, Florida</h3><p>Management, purchasing and client relations.</p></div>
+      <div class="op"><div class="op-ic"><svg class="ic"><use href="#ic-hub"/></svg></div><small>Consolidation Hubs</small><h3>Delaware · Florida · California</h3><p>Receiving, consolidation, kitting and export staging, operated with our forwarding partners.</p></div>
+      <div class="op"><div class="op-ic"><svg class="ic"><use href="#ic-globe"/></svg></div><small>Markets</small><h3>United States &amp; Export</h3><p>B2B delivery across the U.S. and documented export shipments, including Central Asia.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPANY DETAILS (for vendor onboarding) ===== -->
+<section class="sec sec-off" id="company">
+  <div class="wrap cd">
+    <div>
+      <div class="eyebrow">Company Details</div>
+      <h2 class="h2">Registered. Documented. Accountable.</h2>
+      <p class="lead">Key company information for vendor onboarding, credit applications and compliance checks.</p>
+      <div class="cred-cards">
+        <div class="cc cc-1"><b>LLC</b><strong>Florida registered</strong><span>Division of Corporations</span></div>
+        <div class="cc cc-2"><b>EIN</b><strong>U.S. federal tax ID</strong><span>IRS-registered business</span></div>
+        <div class="cc cc-3"><b>New</b><strong>Factory-sealed only</strong><span>Authorized U.S. channels</span></div>
+        <div class="cc cc-4"><b>RMA</b><strong>Warranty coordination</strong><span>For product we supplied</span></div>
+      </div>
+    </div>
+    <div class="cd-table">
+      <div class="cd-row"><span>Legal name</span><b>Bravion Supply LLC</b></div>
+      <div class="cd-row"><span>Registered in</span><b>Florida, USA</b></div>
+      <div class="cd-row"><span>Business address</span><b>Sunny Isles Beach, FL 33160</b></div>
+      <div class="cd-row"><span>Phone</span><b><a href="tel:+17542979794">+1 (754) 297-9794</a></b></div>
+      <div class="cd-row"><span>Email</span><b><a href="mailto:dmitriy.k@bravionsupply.com">dmitriy.k@bravionsupply.com</a></b></div>
+      <div class="cd-row"><span>Divisions</span><b>IT Hardware · Building Materials</b></div>
+      <div class="cd-row"><span>Consolidation hubs</span><b>Delaware · Florida · California</b></div>
+      <div class="cd-row"><span>Customer type</span><b>B2B only — no consumer retail</b></div>
+      <div class="cd-row"><span>Verify registration</span><b><a href="https://search.sunbiz.org/Inquiry/CorporationSearch/ByName" target="_blank" rel="noopener">Search “Bravion Supply” on Sunbiz.org</a></b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND (SHI) ===== -->
+<section class="cta-band sec-off">
+  <div class="wrap">
+    <div class="cta-box">
+      <div class="cta-inner">
+        <h2>Ready to source<br>your next order?</h2>
+        <p>Send a part list or tell us what you need — a purchasing manager will come back with a written quote.</p>
+        <a class="btn btn-accent" href="../it-hardware/#rfq">Talk to a Purchasing Manager</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div class="ftr-brand"><a class="logo" href="../"><img src="../assets/bravion-logo-white.svg" alt="Bravion Supply" width="166" height="44"></a><p>Wholesale IT hardware for trade buyers across the United States and export markets. A division of Bravion Supply LLC.</p></div>
+      <div class="ftr-col"><h4>Hardware</h4><a href="../it-hardware/#cat-gpu">Graphics Cards</a><a href="../it-hardware/#cat-cpu">Processors</a><a href="../it-hardware/#cat-ram">Memory</a><a href="../it-hardware/#cat-ssd">Storage</a><a href="../it-hardware/#cat-laptop">Laptops</a><a href="../it-hardware/#cat-net">Networking</a></div>
+      <div class="ftr-col"><h4>Wholesale</h4><a href="../it-hardware/#sizes">Order Sizes</a><a href="../it-hardware/#brands">Brands</a><a href="../it-hardware/#logistics">Logistics &amp; Export</a><a href="../it-hardware/#turnkey">Turnkey Setup</a><a href="../it-hardware/#faq">FAQ</a></div>
+      <div class="ftr-col"><h4>Company</h4><a href="../about/">About Us</a><a href="../it-hardware/#supply">Who We Supply</a><a href="../">Bravion Supply Home</a><a href="../#floors">Bravion Floors</a></div>
+      <div class="ftr-col"><h4>Contact</h4><a href="tel:+17542979794">+1 (754) 297-9794</a><a href="mailto:dmitriy.k@bravionsupply.com">dmitriy.k@bravionsupply.com</a><div>Sunny Isles Beach, FL 33160</div></div>
+    </div>
+    <div class="ftr-bottom">
+      <span>© 2026 Bravion Supply LLC. All rights reserved.</span>
+      <p>Brand names are trademarks of their respective owners. Bravion Supply is an independent reseller and is not an authorized representative of any manufacturer unless stated.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const hdr=document.querySelector('.hdr'), burger=document.getElementById('burger'), megaBtn=document.getElementById('megaBtn'), mega=document.getElementById('mega');
+  const mobile=()=>window.matchMedia('(max-width:860px)').matches;
+  burger.addEventListener('click',()=>{const o=hdr.classList.toggle('open');burger.setAttribute('aria-expanded',o);});
+  const close=()=>{mega.classList.remove('open');megaBtn.setAttribute('aria-expanded','false');};
+  megaBtn.addEventListener('click',e=>{ if(mobile()){location.href='../it-hardware/#categories';return;} const o=mega.classList.toggle('open'); megaBtn.setAttribute('aria-expanded',o); e.stopPropagation(); });
+  document.addEventListener('click',e=>{if(!mega.contains(e.target))close();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+})();
+</script>
+</body>
+</html>
